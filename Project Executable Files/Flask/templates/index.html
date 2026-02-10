@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenClassify - Vegetable Image Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">GreenClassify</div>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#prediction">Prediction</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Background -->
+    <section id="home" class="hero" style="background-image: url('{{ url_for('static', filename='images/vegetables-bg.jpg') }}');">
+        <div class="hero-content">
+            <h1>Deep Learning-Based Vegetable Image Classification</h1>
+            <p>Accurately identifying and categorizing vegetables using state-of-the-art deep learning techniques.</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>GreenClassify aims to streamline agricultural operations, improve inventory management, and enhance efficiency using advanced deep learning technologies.</p>
+            <p>Our project is built to assist in automated sorting, quality control, and smart shelf management, all driven by cutting-edge image recognition techniques.</p>
+        </div>
+    </section>
+
+    <!-- Prediction Section with Stylish Upload Form -->
+    <section id="prediction" class="prediction">
+        <div class="container">
+            <h2>Prediction</h2>
+            <div class="card">
+                <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+                    <h3>Classify your vegetable image</h3>
+                    <input type="file" name="file" id="file" class="upload-btn" required>
+                    <button type="submit" class="btn">Upload and Predict</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Email us at support@greenclassify.com for any inquiries.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 GreenClassify. All rights reserved.</p>
+    </footer>
+</body>
+</html>
